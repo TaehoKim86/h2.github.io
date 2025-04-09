@@ -1,4 +1,4 @@
-var version = "0.0.2";
+var version = "0.0.3";
 
 const cacheName = `superSplat-v${version}`;
 const cacheUrls = [
@@ -6,6 +6,8 @@ const cacheUrls = [
     './index.html',
     './index.css',
     './index.js',
+    './index.js.map',
+    './jszip.js',
     './manifest.json',
     './static/icons/logo-192.png',
     './static/icons/logo-512.png',
