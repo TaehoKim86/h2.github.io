@@ -1,10 +1,10 @@
-var version = "0.0.5";
+var version = "0.1.0";
 
 const cacheName = `superSplat-v${version}`;
 const cacheUrls = [
     './',
-    './index.html',
     './index.css',
+    './index.html',
     './index.js',
     './index.js.map',
     './jszip.js',
@@ -12,7 +12,9 @@ const cacheUrls = [
     './static/icons/logo-192.png',
     './static/icons/logo-512.png',
     './static/images/screenshot-narrow.jpg',
-    './static/images/screenshot-wide.jpg'
+    './static/images/screenshot-wide.jpg',
+    './static/lib/lodepng/lodepng.js',
+    './static/lib/lodepng/lodepng.wasm'
 ];
 self.addEventListener('install', (event) => {
     console.log(`installing v${version}`);

@@ -2126,7 +2126,7 @@
   font-family: pc-icon;
   font-weight: bold;
   font-size: 13px;
-  color: #f60;
+  color: #10B47E;
 }
 .panel > .panel-header > .panel-header-label {
   color: #fff;
@@ -2137,7 +2137,7 @@
   font-family: pc-icon;
   font-weight: bold;
   font-size: 13px;
-  color: #f60;
+  color: #10B47E;
   padding: 4px;
   flex-grow: 0;
   flex-shrink: 0;
@@ -2145,7 +2145,7 @@
   text-align: center;
 }
 .panel .panel-header-button svg {
-  color: #f60;
+  color: #10B47E;
 }
 .panel .panel-header-button:hover {
   color: #ff9900;
@@ -2203,7 +2203,7 @@
   border-radius: 2px;
 }
 .menu-row > .pcui-boolean-input.pcui-boolean-input-ticked {
-  background-color: #f60;
+  background-color: #10B47E;
 }
 .menu-row > .pcui-boolean-input.pcui-boolean-input-ticked::after {
   color: #fff;
@@ -2347,7 +2347,7 @@
   background-color: #b3aaac;
 }
 #view-panel > .view-panel-row > .view-panel-row-toggle.pcui-boolean-input-ticked {
-  background-color: #f60;
+  background-color: #10B47E;
 }
 #view-panel > .view-panel-row > .view-panel-row-toggle.pcui-boolean-input-ticked::after {
   background-color: white;
@@ -2381,7 +2381,6 @@
   transform: translate(0, -50%);
   right: 102px;
   width: 320px;
-  height: 240px;
   flex-direction: column;
 }
 #color-panel:not(.pcui-hidden) {
@@ -2582,7 +2581,7 @@
 }
 .bottom-toolbar-tool.active {
   color: white;
-  background-color: #f60 !important;
+  background-color: #10B47E !important;
 }
 .bottom-toolbar-tool.active svg {
   color: white;
@@ -2595,10 +2594,10 @@
 }
 
 .bottom-toolbar-toggle.active::before {
-  color: #f60;
+  color: #10B47E;
 }
 .bottom-toolbar-toggle.active svg {
-  color: #f60;
+  color: #10B47E;
 }
 
 #right-toolbar {
@@ -2656,7 +2655,7 @@
 }
 #right-toolbar > .right-toolbar-tool.active {
   color: white;
-  background-color: #f60 !important;
+  background-color: #10B47E !important;
 }
 #right-toolbar > .right-toolbar-tool.active svg {
   color: white;
@@ -2668,10 +2667,10 @@
   color: #7c7678;
 }
 #right-toolbar > .right-toolbar-toggle.active::before {
-  color: #f60;
+  color: #10B47E;
 }
 #right-toolbar > .right-toolbar-toggle.active svg {
-  color: #f60;
+  color: #10B47E;
 }
 
 #select-toolbar {
@@ -2839,7 +2838,7 @@
   text-align: center;
 }
 #popup #popup-dialog #popup-link-row #popup-link-text a {
-  color: #f60;
+  color: #10B47E;
   font-weight: bold;
   font-size: 14px;
   text-decoration-line: none;
@@ -2864,7 +2863,7 @@
 }
 #popup #popup-dialog #popup-buttons .popup-button:hover {
   color: #fff;
-  background-color: #f60;
+  background-color: #10B47E;
 }
 
 #mode-toggle {
@@ -2888,10 +2887,10 @@
   display: none;
 }
 #mode-toggle #centers-icon {
-  color: #f60;
+  color: #10B47E;
 }
 #mode-toggle #rings-icon {
-  color: #f60;
+  color: #10B47E;
 }
 #mode-toggle:hover {
   color: #fff;
@@ -2963,6 +2962,18 @@
   margin-right: 0px;
   width: calc(100% - 9px);
 }
+.settings-dialog #dialog #content .row .vector-input {
+  margin: 0;
+  flex-grow: 1;
+}
+.settings-dialog #dialog #content .row .vector-input div.pcui-numeric-input {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 22px;
+}
+.settings-dialog #dialog #content .row .vector-input div.pcui-numeric-input > .pcui-numeric-input-slider-control::after {
+  top: -6px;
+}
 .settings-dialog #dialog #footer {
   display: flex;
   justify-content: center;
@@ -2975,7 +2986,7 @@
 }
 .settings-dialog #dialog #footer .button:hover {
   color: #fff;
-  background-color: #f60;
+  background-color: #10B47E;
 }
 
 #spinner-container {
@@ -3033,7 +3044,7 @@
 }
 #export-popup #dialog {
   position: absolute;
-  width: 340px;
+  width: 380px;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -3059,7 +3070,7 @@
   color: #FFAF50;
 }
 #export-popup #dialog #content {
-  min-height: 100px;
+  min-height: 60px;
   padding: 12px;
 }
 #export-popup #dialog #content .row {
@@ -3073,14 +3084,15 @@
 #export-popup #dialog #content .row .label {
   margin: 0px;
   flex-grow: 1;
+  width: 180px;
 }
 #export-popup #dialog #content .row .select, #export-popup #dialog #content .row .color-picker, #export-popup #dialog #content .row .slider, #export-popup #dialog #content .row .text-entry {
   margin: 0px;
-  width: 180px;
+  width: 100%;
 }
 #export-popup #dialog #content .row .text-input {
   margin: 0px;
-  width: 180px;
+  width: 100%;
 }
 #export-popup #dialog #footer {
   display: flex;
@@ -3094,7 +3106,7 @@
 }
 #export-popup #dialog #footer .button:hover {
   color: #fff;
-  background-color: #f60;
+  background-color: #10B47E;
 }
 
 #timeline-panel {
@@ -3186,7 +3198,7 @@
 }
 #timeline-panel > #ticks > #ticks-area > .time-label.cursor {
   color: white;
-  background-color: #f60;
+  background-color: #10B47E;
   padding: 2px 6px;
   border-radius: 4px;
 }
@@ -3335,7 +3347,7 @@ body {
 
 #coord-space-toggle.active {
   background-color: #282828 !important;
-  color: #f60;
+  color: #10B47E;
 }
 
 #file-selector {
@@ -3354,6 +3366,8 @@ body {
 
 #shortcuts-panel {
   background-color: #282828;
+  height: 500px;
+  overflow-y: auto;
 }
 
 #shortcuts-container {
@@ -3389,7 +3403,7 @@ body {
   cursor: pointer;
 }
 #cursor-label:hover {
-  border: 1px solid #f60;
+  border: 1px solid #10B47E;
   background-color: rgba(0, 0, 0, 0.25);
 }
 
@@ -3480,7 +3494,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #f60;
+  background: #10B47E;
 }
 
 ::-webkit-scrollbar-corner {
