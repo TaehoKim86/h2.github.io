@@ -2994,12 +2994,11 @@
   top: 0;
   width: 100%;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
   pointer-events: all;
   cursor: progress;
 }
-
-.spinner::before,
-.spinner::after {
+#spinner-container .spinner::before, #spinner-container .spinner::after {
   border: 2px solid;
   border-left: none;
   box-sizing: border-box;
@@ -3014,20 +3013,17 @@
   border-width: 3px;
   border-color: #aaa;
 }
-
-.spinner::before {
+#spinner-container .spinner::before {
   width: 15px;
   height: 30px;
   border-radius: 0 30px 30px 0;
 }
-
-.spinner::after {
+#spinner-container .spinner::after {
   width: 8px;
   height: 16px;
   border-radius: 0 16px 16px 0;
   animation-direction: reverse;
 }
-
 @keyframes spinner-spin {
   0% {
     transform: translateY(-50%) rotate(0deg);
@@ -3036,6 +3032,71 @@
     transform: translateY(-50%) rotate(360deg);
   }
 }
+
+#progress-container {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.25);
+  pointer-events: all;
+  cursor: progress;
+}
+#progress-container #dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 8px;
+  background-color: #333;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#progress-container #dialog #header {
+  height: 32px;
+  line-height: 32px;
+  margin: 0px;
+  padding: 0px 8px;
+  font-weight: bold;
+  color: #aaa;
+  background-color: #202020;
+}
+#progress-container #dialog #content {
+  width: 360px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+#progress-container #dialog #content #text {
+  width: 100%;
+  text-wrap: wrap;
+  color: #aaa;
+}
+#progress-container #dialog #content #bar {
+  width: 100%;
+  height: 12px;
+  margin: 16px 0px 0px 0px;
+  border: 1px solid #282828;
+  border-radius: 6px;
+  background-color: #505050;
+}
+#progress-container .pulsate {
+  animation-name: color;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease;
+}
+@keyframes color {
+  to {
+    background-color: #404040;
+  }
+}
+
 #export-popup {
   width: 100%;
   height: 100%;
