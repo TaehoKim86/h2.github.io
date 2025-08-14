@@ -2562,6 +2562,29 @@
   color: #b3aaac;
 }
 
+#bottom-toolbar-ruler {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#bottom-toolbar-ruler svg {
+  width: 20;
+  height: 20px;
+  display: block;
+  color: #b3aaac;
+}
+#bottom-toolbar-ruler svg * {
+  stroke: currentColor !important;
+}
+
+.bottom-toolbar-tool.active#bottom-toolbar-ruler svg {
+  color: white;
+}
+
+.bottom-toolbar-tool.disabled#bottom-toolbar-ruler svg {
+  color: #7c7678;
+}
+
 .bottom-toolbar-separator {
   width: 2px;
   height: 38px;
@@ -3349,6 +3372,252 @@
   top: 0;
   transition: width 0.2s ease;
   border-radius: 4px;
+}
+
+#measure-toolbar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.9);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-family: "Arial", sans-serif;
+  font-size: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  min-width: 320px;
+  max-width: 500px;
+}
+
+#measure-toolbar .select-toolbar-button {
+  background: #444;
+  border: 1px solid #666;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s;
+}
+
+#measure-toolbar .select-toolbar-button:hover {
+  background: #555;
+}
+
+#measure-toolbar .select-toolbar-button:active {
+  background: #333;
+}
+
+.distance-label {
+  font-weight: bold;
+  color: #ffffff;
+  min-width: 140px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 8px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+/* HTML/CSS 기반 측정 라인 스타일 */
+.measurement-preview-line {
+  background: linear-gradient(90deg, rgba(255, 100, 100, 0.8), rgba(255, 150, 150, 0.6));
+  height: 2px;
+  position: absolute;
+  z-index: 999;
+  pointer-events: none;
+  transform-origin: 0 50%;
+  box-shadow: 0 0 3px rgba(255, 100, 100, 0.4);
+  border-radius: 1px;
+  animation: measurementPulse 1.5s ease-in-out infinite;
+}
+
+.measurement-final-line {
+  background: linear-gradient(90deg, rgb(255, 0, 0), rgb(220, 0, 0));
+  height: 3px;
+  position: absolute;
+  z-index: 1000;
+  pointer-events: none;
+  transform-origin: 0 50%;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.6), 0 0 12px rgba(255, 0, 0, 0.3);
+  border-radius: 1.5px;
+}
+
+@keyframes measurementPulse {
+  0%, 100% {
+    opacity: 0.8;
+    box-shadow: 0 0 3px rgba(255, 100, 100, 0.4);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 6px rgba(255, 100, 100, 0.8);
+  }
+}
+.scale-label {
+  font-weight: normal;
+  color: #cccccc;
+  font-size: 11px;
+  width: 100%;
+  text-align: center;
+  padding: 2px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 4px;
+}
+
+/* 스케일 입력 필드 */
+#measure-toolbar .pcui-numeric-input {
+  width: 70px !important;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+#measure-toolbar .pcui-numeric-input input {
+  background: transparent;
+  color: white;
+  border: none;
+  font-size: 12px;
+}
+
+/* 단위 선택 드롭다운 */
+.unit-selector {
+  display: flex;
+  align-items: center;
+}
+
+.unit-select {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 3px;
+  padding: 4px 6px;
+  font-size: 12px;
+  min-width: 50px;
+}
+
+.unit-select option {
+  background: #333;
+  color: white;
+}
+
+/* 기준 거리 설정 버튼 */
+.reference-button {
+  background: #4a90e2 !important;
+  border-color: #357abd !important;
+}
+
+.reference-button:hover {
+  background: #357abd !important;
+}
+
+.reference-button.active {
+  background: #e74c3c !important;
+  border-color: #c0392b !important;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 커서 스타일 */
+.measurement-active {
+  cursor: crosshair !important;
+}
+
+/* 측정 중일 때 캔버스 오버레이 */
+.measurement-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* 선택된 점 표시 */
+.measurement-point {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff0000;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 101;
+}
+
+/* 화면 마커 스타일 */
+.measurement-marker {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.measurement-marker .marker-icon {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
+  /* 삼각형 마커 애니메이션 */
+  animation: markerPulse 2s ease-in-out infinite;
+}
+.measurement-marker .marker-icon svg {
+  width: 100%;
+  height: 100%;
+}
+.measurement-marker .marker-label {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 0, 0, 0.9);
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 마커 펄스 애니메이션 */
+@keyframes markerPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+/* Reference 도움말 스타일 */
+.reference-help {
+  font-size: 12px;
+  color: #ffeb3b;
+  background: rgba(255, 193, 7, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #ffeb3b;
 }
 
 * {
