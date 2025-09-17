@@ -2378,11 +2378,10 @@
 
 #fov-custom-panel {
   position: fixed;
-  top: 50%;
-  transform: translate(0, -50%);
-  left: 20px;
-  width: 280px;
-  max-width: calc(100vw - 40px);
+  bottom: 150px;
+  left: 24px;
+  width: 150px;
+  max-width: calc(100vw - 48px);
   flex-direction: column;
   z-index: 100;
   overflow: visible !important;
@@ -2396,15 +2395,24 @@
 }
 @media (max-width: 640px) {
   #fov-custom-panel {
-    left: 10px;
-    width: 260px;
-    max-width: calc(100vw - 20px);
+    bottom: 150px;
+    left: 24px;
+    width: 130px;
+    max-width: calc(100vw - 48px);
   }
 }
 #fov-custom-panel .panel-header {
   background-color: #202020;
   border-bottom: 1px solid #181818;
   padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#fov-custom-panel .panel-header .panel-header-content {
+  display: flex;
+  align-items: center;
+  flex: 1;
 }
 #fov-custom-panel .panel-header .panel-header-icon {
   font-size: 16px;
@@ -2415,6 +2423,24 @@
   color: #fff;
   font-weight: bold;
   font-size: 13px;
+}
+#fov-custom-panel .panel-header .fov-panel-collapse-icon,
+#fov-custom-panel .panel-header .fov-panel-expand-icon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+#fov-custom-panel .panel-header .fov-panel-collapse-icon svg,
+#fov-custom-panel .panel-header .fov-panel-expand-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
+#fov-custom-panel .panel-header .fov-panel-collapse-icon:hover,
+#fov-custom-panel .panel-header .fov-panel-expand-icon:hover {
+  color: #10B47E;
 }
 #fov-custom-panel .fov-panel-row {
   display: flex;
@@ -2468,9 +2494,20 @@
 #fov-custom-panel .fov-panel-row .fov-panel-row-select .pcui-selectinput-toggle:hover {
   background-color: #202020 !important;
 }
+#fov-custom-panel .fov-panel-content {
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+}
+#fov-custom-panel.fov-panel-collapsed .panel-header {
+  border-bottom: none;
+}
+#fov-custom-panel.fov-panel-collapsed .fov-panel-content {
+  max-height: 0;
+  opacity: 0;
+}
 #fov-custom-panel.pcui-hidden {
   opacity: 0;
-  transform: translate(-20px, -50%);
+  transform: translate(-20px, 20px);
   pointer-events: none;
 }
 
