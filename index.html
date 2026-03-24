@@ -40,6 +40,31 @@
     </head>
 
     <body>
-        <script type="module" src="./index.js"></script>
+        <!-- 로딩 스피너: JS 번들 파싱/실행 중 사용자에게 표시, main.ts에서 앱 초기화 완료 후 제거 -->
+        <div id="app-loading" style="position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:#1a1a1a;z-index:99999;">
+            <div style="text-align:center;color:#ccc;font-family:sans-serif;">
+                <div style="width:40px;height:40px;border:3px solid #333;border-top-color:#fff;border-radius:50%;margin:0 auto 16px;animation:spin 0.8s linear infinite;"></div>
+                <div>Loading...</div>
+            </div>
+        </div>
+        <style>@keyframes spin{to{transform:rotate(360deg)}}</style>
+
+        <!--
+            Flutter WebView 타이밍 이슈 대응:
+            Flutter의 onLoadStop은 HTML 로드 완료 시 호출되지만,
+            index.js(defer)는 아직 실행되지 않은 상태일 수 있다.
+            이 인라인 스크립트로 window.loadFileFromFlutter를 미리 등록하여
+            Flutter에서 호출 시 파일 경로를 큐에 저장하고,
+            앱 초기화 완료 후 initFlutterIntegration()에서 큐를 처리한다.
+        -->
+        <script>
+            window.__pendingFlutterFiles = [];
+            window.loadFileFromFlutter = function(filePath) {
+                console.log('loadFileFromFlutter queued (app not ready yet):', filePath);
+                window.__pendingFlutterFiles.push(filePath);
+            };
+        </script>
+
+        <script defer src="./index.js"></script>
     </body>
 </html>
