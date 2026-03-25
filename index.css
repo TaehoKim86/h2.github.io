@@ -2228,13 +2228,13 @@ body {
 }
 
 ::-moz-selection {
-  background-color: var(--ax-accent-subtle);
-  color: var(--ax-text-primary);
+  background-color: var(--ax-accent);
+  color: #fff;
 }
 
 ::selection {
-  background-color: var(--ax-accent-subtle);
-  color: var(--ax-text-primary);
+  background-color: var(--ax-accent);
+  color: #fff;
 }
 
 #app-container {
@@ -2616,12 +2616,25 @@ body {
   color: var(--ax-text-muted);
 }
 
+.ax-numeric-wrap {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+.ax-numeric-wrap .ax-input-number {
+  width: 100%;
+}
+
 .ax-input-number {
   width: 60px;
   text-align: right;
   font-family: var(--ax-font-mono);
   font-size: var(--ax-font-size-sm);
   -moz-appearance: textfield;
+  cursor: ew-resize;
+}
+.ax-input-number:focus {
+  cursor: text;
 }
 .ax-input-number::-webkit-inner-spin-button, .ax-input-number::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -3014,6 +3027,55 @@ body {
   border-color: var(--ax-border-light);
 }
 
+.select-toolbar, #measure-toolbar {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--ax-bg-elevated);
+  border: 1px solid var(--ax-border);
+  border-radius: var(--ax-radius-lg);
+  box-shadow: var(--ax-shadow-md);
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.select-toolbar-button {
+  padding: 4px 12px;
+  border: 1px solid var(--ax-border);
+  border-radius: var(--ax-radius-sm);
+  background-color: var(--ax-bg-surface);
+  color: var(--ax-text-primary);
+  cursor: pointer;
+  font-size: var(--ax-font-size-sm);
+  white-space: nowrap;
+  transition: background-color var(--ax-transition-fast);
+}
+.select-toolbar-button:hover {
+  background-color: var(--ax-bg-hover);
+}
+.select-toolbar-button:active {
+  background-color: var(--ax-accent-subtle);
+}
+
+.ax-input::-moz-selection, .ax-input-number::-moz-selection, .ax-select::-moz-selection, input[type=number]::-moz-selection, input[type=text]::-moz-selection {
+  background-color: var(--ax-accent);
+  color: #fff;
+}
+
+.ax-input::selection,
+.ax-input-number::selection,
+.ax-select::selection,
+input[type=number]::selection,
+input[type=text]::selection {
+  background-color: var(--ax-accent);
+  color: #fff;
+}
+
 .tooltips {
   position: absolute;
   background-color: #181818;
@@ -3030,9 +3092,7 @@ body {
   width: 100%;
   height: 320px;
   border-top: 1px solid #444;
-}
-#data-panel:not(.pcui-hidden) {
-  display: flex;
+  position: relative;
 }
 
 #data-panel-resize-handle {
@@ -3071,6 +3131,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  overflow: hidden;
   background-color: #333;
 }
 
