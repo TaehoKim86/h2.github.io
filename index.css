@@ -3027,7 +3027,7 @@ body {
   border-color: var(--ax-border-light);
 }
 
-.select-toolbar, #measure-toolbar {
+.select-toolbar {
   position: absolute;
   bottom: 12px;
   left: 50%;
@@ -3923,20 +3923,14 @@ input[type=text]::selection {
 }
 
 /* 스케일 입력 필드 */
-#measure-toolbar .pcui-numeric-input {
-  width: 70px !important;
+#measure-toolbar input[type=number] {
+  width: 70px;
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.3);
   color: white;
   border-radius: 3px;
   font-size: 12px;
-}
-
-#measure-toolbar .pcui-numeric-input input {
-  background: transparent;
-  color: white;
-  border: none;
-  font-size: 12px;
+  padding: 4px 6px;
 }
 
 /* 단위 선택 드롭다운 */
