@@ -1075,6 +1075,7 @@ input[type=text]::selection {
 #histogram-container {
   flex-grow: 1;
   flex-shrink: 1;
+  position: relative;
 }
 
 #histogram-canvas {

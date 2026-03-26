@@ -1,7 +1,7 @@
 {
-    "name": "ANNXSPLAT",
-    "short_name": "ANNXSPLAT",
-    "description": "ANNXSPLAT is an advanced browser-based editor for manipulating and optimizing 3D Gaussian Splats. It is open source and engine agnostic.",
+    "name": "ANNX AI EDITOR",
+    "short_name": "ANNX AI EDITOR",
+    "description": "ANNX AI EDITOR is an advanced browser-based editor for manipulating and optimizing 3D Gaussian Splats. It is open source and engine agnostic.",
     "display": "fullscreen",
     "start_url": "./",
     "scope": "./",
