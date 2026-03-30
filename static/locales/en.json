@@ -173,6 +173,7 @@
     "popup.shortcuts.toggle-overlay-mode": "Toggle Overlay Mode",
     "popup.shortcuts.toggle-control-mode": "Toggle Fly/Orbit Mode",
     "popup.shortcuts.toggle-grid": "Toggle Grid",
+    "popup.shortcuts.toggle-colmap-cameras": "Show Camera Alignment",
     "popup.shortcuts.toggle-gizmo-coordinate-space": "Toggle Gizmo Coordinate Space",
     "popup.shortcuts.camera": "Camera (Fly Mode)",
     "popup.shortcuts.fly-movement": "Move Forward/Left/Backward/Right",
