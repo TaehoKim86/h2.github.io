@@ -284,6 +284,7 @@
     "panel.view-options.high-precision": "High Precision Rendering",
     "popup.drop-files": "Please drop files and folders",
     "popup.export.format": "File Format",
+    "popup.export.format-original-ply": "Original PLY",
     "popup.export.format-compressed-ply": "Compressed PLY",
     "popup.export.format-sog": "SOG",
     "popup.shortcuts.picker-selection": "Picker Selection",

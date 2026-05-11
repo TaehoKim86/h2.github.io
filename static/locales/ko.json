@@ -284,6 +284,7 @@
     "panel.view-options.high-precision": "고정밀 렌더링",
     "popup.drop-files": "파일 및 폴더를 드롭하세요",
     "popup.export.format": "파일 형식",
+    "popup.export.format-original-ply": "원본 PLY",
     "popup.export.format-compressed-ply": "압축된 PLY",
     "popup.export.format-sog": "SOG",
     "popup.shortcuts.picker-selection": "피커 선택",
