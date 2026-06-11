@@ -319,19 +319,14 @@ body {
 }
 
 #right-sidebar {
-  position: absolute;
-  top: 0;
-  right: 0;
   width: var(--ax-right-panel-width);
-  height: 100%;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--ax-bg-surface);
   border-left: 1px solid var(--ax-border);
-  box-shadow: var(--ax-shadow-lg);
-  z-index: 50;
 }
 #right-sidebar.hidden {
   display: none;
